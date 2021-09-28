@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('products')
 class Product {
@@ -13,7 +15,7 @@ class Product {
     description: string;
     @Column()
     image_uri: string;
-    
+
     @CreateDateColumn()
     created_at: Date;
     @UpdateDateColumn()

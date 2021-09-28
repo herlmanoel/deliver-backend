@@ -1,4 +1,7 @@
-import { Column, CreateDateColumn, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column, CreateDateColumn, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn,
+} from 'typeorm';
+
 import { OrderStatus } from '../enums/OrderStatus';
 import { Product } from './Product';
 
@@ -13,7 +16,7 @@ class Order {
     longitude: number;
     @Column()
     moment: Date;
-    @Column() 
+    @Column()
     status: OrderStatus;
 
     @CreateDateColumn()
@@ -24,7 +27,6 @@ class Order {
     @ManyToMany(() => Product)
     @JoinTable()
     products: Product[];
-
 }
 
 export { Order };
